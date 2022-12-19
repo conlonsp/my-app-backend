@@ -9,18 +9,23 @@ class ApplicationController < Sinatra::Base
     homes.to_json(include: :agent)
   end
 
+  get "/agents" do
+    agents = Agent.all
+    agents.to_json(include: :homes)
+  end
+
   post "/homes" do
     home = Home.create(
       address: params[:address],
       price: params[:price],
-      square_feet: params[:square_feet]
+      square_feet: params[:square_feet],
+      agent_id: params[:agent_id]
     )
     home.to_json
   end
 
   patch "/homes/:id" do
     home = Home.find(params[:id])
-    binding.pry
     home.update(
       address: params[:address],
       price: params[:price],
