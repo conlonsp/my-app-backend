@@ -40,6 +40,7 @@ class ApplicationController < Sinatra::Base
       address: params[:address],
       price: params[:price],
       square_feet: params[:square_feet]
+      agent_id: params[:agent_id]
     )
     home.to_json
   end
