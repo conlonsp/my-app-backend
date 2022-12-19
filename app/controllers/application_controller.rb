@@ -61,4 +61,11 @@ class ApplicationController < Sinatra::Base
     home.destroy
     home.to_json
   end
+
+  delete "/agents/:id" do
+    agent = Agent.find(params[:id])
+    agent.destroy
+    agent.to_json
+  end
+  
 end
