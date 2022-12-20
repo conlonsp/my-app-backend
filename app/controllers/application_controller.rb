@@ -39,7 +39,7 @@ class ApplicationController < Sinatra::Base
     home.update(
       address: params[:address],
       price: params[:price],
-      square_feet: params[:square_feet]
+      square_feet: params[:square_feet],
       agent_id: params[:agent_id]
     )
     home.to_json
@@ -47,7 +47,7 @@ class ApplicationController < Sinatra::Base
 
   patch "/agents/:id" do
     agent = Agent.find(params[:id])
-    agent.update (
+    agent.update(
       name: params[:name],
       brokerage: params[:brokerage],
       email: params[:email],
@@ -67,5 +67,5 @@ class ApplicationController < Sinatra::Base
     agent.destroy
     agent.to_json
   end
-  
+
 end
