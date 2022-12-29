@@ -1,6 +1,6 @@
 class CreateAppointments < ActiveRecord::Migration[6.1]
   def change
-    create_table :appointmentss do |t|
+    create_table :appointments do |t|
       t.string :scheduler
       t.string :date
       t.string :time
