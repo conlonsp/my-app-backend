@@ -10,13 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_12_17_211213) do
+ActiveRecord::Schema.define(version: 2022_12_29_211318) do
 
   create_table "agents", force: :cascade do |t|
     t.string "name"
     t.string "brokerage"
     t.string "email"
     t.integer "phone_number"
+  end
+
+  create_table "appointmentss", force: :cascade do |t|
+    t.string "scheduler"
+    t.string "date"
+    t.string "time"
+    t.integer "agent_id"
+    t.integer "home_id"
   end
 
   create_table "homes", force: :cascade do |t|
