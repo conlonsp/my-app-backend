@@ -13,7 +13,7 @@ puts "🌱 Seeding agents..."
     name: Faker::Name.name,
     brokerage: Faker::Company.name,
     email: Faker::Internet.email,
-    phone_number: Faker::PhoneNumber.phone_number
+    phone_number: Faker::PhoneNumber.cell_phone
   )
 end
 

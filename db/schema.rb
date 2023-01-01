@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2022_12_29_225402) do
     t.string "name"
     t.string "brokerage"
     t.string "email"
-    t.integer "phone_number"
+    t.string "phone_number"
   end
 
   create_table "appointments", force: :cascade do |t|

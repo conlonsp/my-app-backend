@@ -4,7 +4,7 @@ class CreateAgents < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :brokerage
       t.string :email
-      t.integer :phone_number
+      t.string :phone_number
     end
   end
 end
