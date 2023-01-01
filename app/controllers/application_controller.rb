@@ -7,12 +7,16 @@ class ApplicationController < Sinatra::Base
   get "/homes" do
     homes = Home.all
     homes.to_json(include: [:agent, :appointments])
-    
   end
 
   get "/agents" do
     agents = Agent.all
     agents.to_json(include: :homes)
+  end
+
+  get "/appointments" do
+    appointments = Appointment.all
+    appointments.to_json
   end
 
   post "/homes" do
@@ -33,6 +37,16 @@ class ApplicationController < Sinatra::Base
       phone_number: params[:phone_number]
     )
     agent.to_json
+  end
+
+  post "/appointments" do
+    appointment = Appointment.create(
+      scheduler: params[:scheduler],
+      time: params[:time],
+      agent_id: params[:agent_id],
+      home_id: params[:home_id]
+    )
+    appointment.to_json
   end
 
   patch "/homes/:id" do
@@ -67,6 +81,12 @@ class ApplicationController < Sinatra::Base
     agent = Agent.find(params[:id])
     agent.destroy
     agent.to_json
+  end
+
+  delete "/appointments/:id" do
+    appointment = Appointment.find(params[:id])
+    appointment.destroy
+    appointment.to_json
   end
 
 end
