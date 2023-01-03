@@ -60,17 +60,6 @@ class ApplicationController < Sinatra::Base
     home.to_json
   end
 
-  patch "/agents/:id" do
-    agent = Agent.find(params[:id])
-    agent.update(
-      name: params[:name],
-      brokerage: params[:brokerage],
-      email: params[:email],
-      phone_number: params[:phone_number]
-    )
-    agent.to_json
-  end
-
   delete "/homes/:id" do
     home = Home.find(params[:id])
     home.destroy
