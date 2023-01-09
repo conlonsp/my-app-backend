@@ -25,8 +25,7 @@ puts "🌱 Seeding homes..."
   Home.create(
     address: Faker::Address.full_address,
     price: Faker::Number.between(from: 10000, to: 10000000),
-    square_feet: Faker::Number.between(from: 100, to: 10000),
-    agent_id: Agent.all.sample.id
+    square_feet: Faker::Number.between(from: 100, to: 10000)
   )
 end
 
@@ -37,9 +36,9 @@ puts "🌱 Seeding appointments..."
 10.times do 
   Appointment.create(
     scheduler: Faker::Name.name,
-    time: Faker::Time.between(from: DateTime.now - 1, to: DateTime.now, format: :long),
+    time: Faker::Time.between(from: DateTime.now, to: DateTime.now + 30, format: :long),
     agent_id: Agent.all.sample.id,
-    home_id: Home.all.sample.id,
+    home_id: Home.all.sample.id
   )
 end
 
