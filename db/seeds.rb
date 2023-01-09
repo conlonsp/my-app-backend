@@ -25,9 +25,12 @@ puts "🌱 Seeding homes..."
   Home.create(
     address: Faker::Address.full_address,
     price: Faker::Number.between(from: 10000, to: 10000000),
-    square_feet: Faker::Number.between(from: 100, to: 10000)
+    square_feet: Faker::Number.between(from: 100, to: 10000),
+    image_url: Faker::LoremFlickr.image(size: "320x240", search_terms: ['house', 'home', 'homes'], match_all: true)
   )
 end
+
+Faker::LoremFlickr.image(size: "50x60", search_terms: ['sports', 'fitness'], match_all: true)
 
 puts "✅ Done seeding homes!"
 
