@@ -1,4 +1,4 @@
 class Agent < ActiveRecord::Base
-  has_many :homes
   has_many :appointments
+  has_many :homes, through: :appointments
 end
