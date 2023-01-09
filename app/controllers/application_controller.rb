@@ -6,12 +6,12 @@ class ApplicationController < Sinatra::Base
   # Add your routes here
   get "/homes" do
     homes = Home.all
-    homes.to_json(include: [:agent, :appointments])
+    homes.to_json(include: [:appointments, :agents])
   end
 
   get "/agents" do
     agents = Agent.all
-    agents.to_json(include: :homes)
+    agents.to_json(include: [:homes, :appointments])
   end
 
   get "/appointments" do
