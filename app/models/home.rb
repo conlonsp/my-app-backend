@@ -1,4 +1,4 @@
 class Home < ActiveRecord::Base
-  belongs_to :agent
   has_many :appointments
+  has_many :agents, through: :appointments
 end
