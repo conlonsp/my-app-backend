@@ -9,6 +9,17 @@ class ApplicationController < Sinatra::Base
     homes.to_json(include: [:appointments, :agents])
   end
 
+  get "/last-home" do
+    last = Home.last
+    last.to_json
+  end
+
+  get "/home-appt/:id" do
+    home = Home.find(params[:id])
+    appts = home.appointments
+    appts.to_json
+  end
+
   get "/agents" do
     agents = Agent.all
     agents.to_json(include: [:homes, :appointments])
