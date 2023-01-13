@@ -21,7 +21,7 @@ puts "🌱 Seeding agents..."
     brokerage: Faker::Company.name,
     email: Faker::Internet.email,
     phone_number: Faker::PhoneNumber.cell_phone,
-    profile_pic: "https://cache.lovethispic.com/uploaded_images/blogs/  10-Beautiful-Nature-Scenes-And-Landscapes-48771-3.jpeg"
+    profile_pic: "https://cache.lovethispic.com/uploaded_images/blogs/10-Beautiful-Nature-Scenes-And-Landscapes-48771-7.jpeg"
   )
   Agent.create(
     name: Faker::Name.name,

@@ -3,7 +3,6 @@ require 'pry'
 class ApplicationController < Sinatra::Base
   set :default_content_type, 'application/json'
   
-  # Add your routes here
   get "/homes" do
     homes = Home.all
     homes.to_json(include: [:appointments, :agents])
@@ -45,7 +44,8 @@ class ApplicationController < Sinatra::Base
       name: params[:name],
       brokerage: params[:brokerage],
       email: params[:email],
-      phone_number: params[:phone_number]
+      phone_number: params[:phone_number],
+      profile_pic: params[:profile_pic]
     )
     agent.to_json
   end
@@ -71,6 +71,18 @@ class ApplicationController < Sinatra::Base
     home.to_json
   end
 
+  delete "/homes/:id" do
+    home = Home.find(params[:id])
+    home.destroy
+    home.to_json
+  end
+
+  delete "/agents/:id" do
+    agent = Agent.find(params[:id])
+    agent.destroy
+    agent.to_json
+  end
+
   # patch "/agents/:id" do
   #   agent = Agent.find(params[:id])
   #   agent.update(
@@ -93,22 +105,10 @@ class ApplicationController < Sinatra::Base
   #   appointment.to_json
   # end
 
-  delete "/homes/:id" do
-    home = Home.find(params[:id])
-    home.destroy
-    home.to_json
-  end
-
-  delete "/agents/:id" do
-    agent = Agent.find(params[:id])
-    agent.destroy
-    agent.to_json
-  end
-
-  delete "/appointments/:id" do
-    appointment = Appointment.find(params[:id])
-    appointment.destroy
-    appointment.to_json
-  end
+  # delete "/appointments/:id" do
+  #   appointment = Appointment.find(params[:id])
+  #   appointment.destroy
+  #   appointment.to_json
+  # end
 
 end
