@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_01_09_230322) do
+ActiveRecord::Schema.define(version: 2023_01_13_185047) do
 
   create_table "agents", force: :cascade do |t|
     t.string "name"
     t.string "brokerage"
     t.string "email"
     t.string "phone_number"
+    t.string "profile_pic"
   end
 
   create_table "appointments", force: :cascade do |t|

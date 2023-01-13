@@ -8,14 +8,49 @@ puts "✅ Done deleting previous data!"
 
 puts "🌱 Seeding agents..."
 
-5.times do
+
   Agent.create(
     name: Faker::Name.name,
     brokerage: Faker::Company.name,
     email: Faker::Internet.email,
-    phone_number: Faker::PhoneNumber.cell_phone
+    phone_number: Faker::PhoneNumber.cell_phone,
+    profile_pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmstdy-egZ2VufcmlLN1vx0NyvoHQrwZ68Jg&usqp=CAU"
   )
-end
+  Agent.create(
+    name: Faker::Name.name,
+    brokerage: Faker::Company.name,
+    email: Faker::Internet.email,
+    phone_number: Faker::PhoneNumber.cell_phone,
+    profile_pic: "https://cache.lovethispic.com/uploaded_images/blogs/  10-Beautiful-Nature-Scenes-And-Landscapes-48771-3.jpeg"
+  )
+  Agent.create(
+    name: Faker::Name.name,
+    brokerage: Faker::Company.name,
+    email: Faker::Internet.email,
+    phone_number: Faker::PhoneNumber.cell_phone,
+    profile_pic: "https://cache.lovethispic.com/uploaded_images/blogs/10-Beautiful-Nature-Scenes-And-Landscapes-48771-6.jpeg"
+  )
+  Agent.create(
+    name: Faker::Name.name,
+    brokerage: Faker::Company.name,
+    email: Faker::Internet.email,
+    phone_number: Faker::PhoneNumber.cell_phone,
+    profile_pic: "https://cache.lovethispic.com/uploaded_images/blogs/10-Beautiful-Nature-Scenes-And-Landscapes-48771-9.jpeg"
+  )
+  Agent.create(
+    name: Faker::Name.name,
+    brokerage: Faker::Company.name,
+    email: Faker::Internet.email,
+    phone_number: Faker::PhoneNumber.cell_phone,
+    profile_pic: "https://cache.lovethispic.com/uploaded_images/blogs/10-Beautiful-Nature-Scenes-And-Landscapes-48771-11.jpeg"
+  )
+  Agent.create(
+    name: Faker::Name.name,
+    brokerage: Faker::Company.name,
+    email: Faker::Internet.email,
+    phone_number: Faker::PhoneNumber.cell_phone,
+    profile_pic: "https://cache.lovethispic.com/uploaded_images/blogs/10-Beautiful-Nature-Scenes-And-Landscapes-48771-10.jpeg"
+  )
 
 puts "✅ Done seeding agents!"
 
